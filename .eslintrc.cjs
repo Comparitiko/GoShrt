@@ -23,7 +23,7 @@ module.exports = {
 		'quotes': ['warn', 'single'],
 		'semi': ['warn', 'never'],
 		'no-trailing-spaces': 'warn',
-		'space-before-function-paren': ['error', 'always'],
+		// 'space-before-function-paren': ['error', 'always'],
 		'no-unused-vars': 'off',
 		'@typescript-eslint/no-unused-vars': 'off',
 		'object-curly-newline': [
