@@ -1,10 +1,14 @@
 ---
+import Footer from '@/components/Footer.astro'
+import Header from '@/components/Header.astro'
+
 interface Props {
 	title: string
 	description: string
+	classList?: string
 }
 
-const { title, description } = Astro.props
+const { title, description, classList } = Astro.props
 ---
 
 <!doctype html>
@@ -13,10 +17,12 @@ const { title, description } = Astro.props
 		<meta charset="UTF-8" />
 		<meta name="description" content={description} />
 		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.ico" />
 		<title>{title}</title>
 	</head>
-	<body>
+	<body class:list={`bg-[#07151d] text-white ${classList}`}>
+		<Header />
 		<slot />
+		<Footer />
 	</body>
 </html>

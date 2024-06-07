@@ -1,9 +1,14 @@
 ---
+import UrlShortener from '@/components/UrlShortener.astro'
 import Layout from '@/layouts/Layout.astro'
 ---
 
-<Layout title='HomePage' description='HomePage desc'>
-  <main>
-    <h1>Hola Mundo</h1>
-  </main>
+<Layout title="GoShrt" description="GoShrt es un servicio acortador de urls gratuito y en español">
+	<main class="w-[80%] mx-auto flex flex-col items-center mt-16 gap-6">
+		<h1 class="text-4xl font-bold shadow-sm">
+			Acorta tus urls <span class="text-red-500">fácilmente</span>
+		</h1>
+		<p class="text-lg">Acorta tus urls para compartirlos de forma fácil</p>
+		<UrlShortener />
+	</main>
 </Layout>

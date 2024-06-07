@@ -1,0 +1,91 @@
+<form class="flex flex-col items-center gap-6 border p-4" action="/" method="post">
+	<section class="flex flex-col gap-6">
+		<label for="longUrl" class="grid gap-2">
+			<span class="text-xl">Pega tu url larga</span>
+			<input
+				id="input-longUrl"
+				type="url"
+				name="longUrl"
+				placeholder="https://url-larga.com/ruta"
+				class="text-black p-2 text-lg"
+			/>
+		</label>
+		<label for="path" class="grid gap-2">
+			<span class="text-xl">Ruta</span>
+			<div class="flex-col md:flex-row xl:flex-row">
+				<input
+					type="text"
+					name="path"
+					value="goshrt.vercel.app/"
+					disabled
+					class="bg-gray-200 text-black p-2 text-lg"
+				/>
+				<input
+					id="input-path"
+					type="text"
+					name="path"
+					placeholder="ruta"
+					class="text-black p-2 text-lg"
+				/>
+			</div>
+		</label>
+	</section>
+	<input type="submit" value="GoShrt" class="border-2 px-8 text-lg" />
+	<div class="hidden border p-2 rounded-md text-lg font-extrabold" id="responseDiv"></div>
+</form>
+
+<script>
+	import { $ } from '@/lib/dom-selector'
+
+	const setResponseDiv = (ok: boolean, message: string) => {
+		const responseDiv = $('#responseDiv') as HTMLDivElement
+		// Insert the message in the response div
+		responseDiv.innerText = ok ? `Tu url es: ${message}` : message
+
+		// Add the appropriate class to the response div and remove the others
+		responseDiv.classList.remove('hidden')
+		if (ok) {
+			responseDiv.classList.remove('bg-red-400')
+			responseDiv.classList.remove('text-red-800')
+			responseDiv.classList.add('bg-green-400')
+			responseDiv.classList.add('text-green-800')
+		} else {
+			responseDiv.classList.remove('bg-green-400')
+			responseDiv.classList.remove('text-green-800')
+			responseDiv.classList.add('bg-red-400')
+			responseDiv.classList.add('text-red-800')
+		}
+	}
+
+	const form = $('form') as HTMLFormElement
+	form.addEventListener('submit', async (e) => {
+		e.preventDefault()
+		const longUrl = $('#input-longUrl') as HTMLInputElement
+		const path = $('#input-path') as HTMLInputElement
+
+		const shortUrl = {
+			longUrl: longUrl.value,
+			path: path.value
+		}
+
+		if (path.value && path.value.length < 5) {
+			setResponseDiv(false, 'La ruta debe tener al menos 5 caracteres')
+			return
+		}
+
+		const res = await fetch('/api/goshrt', {
+			method: 'POST',
+			body: JSON.stringify(shortUrl),
+			headers: {
+				'Content-Type': 'application/json'
+			}
+		})
+
+		if (res.ok) {
+			const data = await res.json()
+			setResponseDiv(true, data.short_url)
+		} else {
+			setResponseDiv(false, 'Ha ocurrido un error intentelo de nuevo')
+		}
+	})
+</script>
