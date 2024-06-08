@@ -1,54 +1,43 @@
-# Astro Starter Kit: Basics
+# GoShrt
 
-```sh
-npm create astro@latest -- --template basics
-```
+Goshrt is a web application to create shortened links based on [linkshrtnr](https://github.com/ikurotime/linkshrtnr).
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
+## Technologies Used 🛠️
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+- [Astro](https://astro.build/) 🚀: The web framework for content-driven websites
+- [TypeScript](https://www.rust): Is a strongly typed programming language that builds on JavaScript, giving you better tooling at any scale.
 
-![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
+## Getting Started 
 
-## 🚀 Project Structure
+Follow these steps to get started with Goshrt locally:
 
-Inside of your Astro project, you'll see the following folders and files:
+### Prerequisites
 
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src/
-│   ├── components/
-│   │   └── Card.astro
-│   ├── layouts/
-│   │   └── Layout.astro
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
+- [NodeJS](https://nodejs.org/en) installed
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+### Installation
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+1. Clone the repository:
 
-Any static assets, like images, can be placed in the `public/` directory.
+   ```bash
+   https://github.com/Comparitiko/GoShrt.git
+   cd GoShrt
+   ```
 
-## 🧞 Commands
+2. install dependencies
 
-All commands are run from the root of the project, from a terminal:
+   ```bash
+   npm install
+   ```
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+3. Run the application
 
-## 👀 Want to learn more?
+   ```bash
+   npm run dev
+   ```
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+4. Navigate to http://localhost:4321 to see the application.
+
+## Contributing 🤝
+
+Contributions are welcome! Feel free to open issues, submit pull requests, or share your ideas.
