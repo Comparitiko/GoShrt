@@ -5,7 +5,7 @@ Goshrt is a web application to create shortened links based on [linkshrtnr](http
 ## Technologies Used 🛠️
 
 - [Astro](https://astro.build/) 🚀: The web framework for content-driven websites
-- [TypeScript](https://www.rust): Is a strongly typed programming language that builds on JavaScript, giving you better tooling at any scale.
+- [TypeScript](https://www.typescriptlang.org/): Is a strongly typed programming language that builds on JavaScript, giving you better tooling at any scale.
 
 ## Getting Started 
 
