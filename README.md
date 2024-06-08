@@ -20,7 +20,7 @@ Follow these steps to get started with Goshrt locally:
 1. Clone the repository:
 
    ```bash
-   https://github.com/Comparitiko/GoShrt.git
+   git clone https://github.com/Comparitiko/GoShrt.git
    cd GoShrt
    ```
 
