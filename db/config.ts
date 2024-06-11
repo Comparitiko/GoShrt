@@ -4,7 +4,7 @@ const Urls = defineTable({
 	columns: {
 		url: column.text(),
 		short_url: column.text({ unique: true }),
-		created_at: column.date({ default: new Date })
+		created_at: column.date({ default: NOW })
 	}
 })
 
